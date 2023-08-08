@@ -1,0 +1,40 @@
+.header{
+    margin-top: 50px;
+    text-align: center;
+    padding: 20px 0px;
+    text-transform: uppercase;
+}
+
+.example-form-field {
+    width: 250px;
+}
+
+.bdy {
+    width: 360px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.btn {
+    margin-left: 2rem;
+}
+
+.task{
+    display:flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding: 10px 0px;
+}
+
+.text {
+    max-width: 300px;
+    overflow-wrap: break-word;
+    padding: 0px 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

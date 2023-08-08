@@ -1,0 +1,39 @@
+<div class="header">
+  <h1>To Do List</h1>
+</div>
+
+<div class="bdy">
+  <mat-form-field class="example-form-field">
+    <mat-label>Clearable input</mat-label>
+    <input matInput type="text" [(ngModel)]="input" />
+    <button
+      *ngIf="input"
+      matSuffix
+      mat-icon-button
+      aria-label="Clear"
+      (click)="input = ''"
+    >
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <button mat-raised-button class="btn" (click)="addItem()">Add</button>
+</div>
+
+<div class="table">
+  <div *ngFor="let item of list; let i=index">
+    <div class="task" *ngIf="!item.editMode">
+      <div class="text">{{ item.task }}</div>
+      <div class="buttons">
+        <mat-icon (click)="changeMode(i)">edit</mat-icon>
+        <mat-icon (click)="deleteItem(i)">delete</mat-icon>
+      </div>
+    </div>
+    <div class="task" *ngIf="item.editMode">
+      <div><input type="text" [(ngModel)]="newTask"></div>
+      <div class="buttons">
+        <mat-icon (click)="saveNewTask()">check</mat-icon>
+        <mat-icon (click)="changeMode(i)">close</mat-icon>
+      </div>
+    </div>
+  </div>
+</div>
