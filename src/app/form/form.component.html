@@ -21,6 +21,7 @@
 
 <div class="table">
   <div *ngFor="let item of list; let i=index">
+
     <div class="task" *ngIf="!item.editMode">
       <div class="text">{{ item.task }}</div>
       <div class="buttons">
@@ -28,6 +29,7 @@
         <mat-icon (click)="deleteItem(i)">delete</mat-icon>
       </div>
     </div>
+
     <div class="task" *ngIf="item.editMode">
       <div><input type="text" [(ngModel)]="newTask"></div>
       <div class="buttons">
@@ -36,4 +38,5 @@
       </div>
     </div>
   </div>
+  
 </div>

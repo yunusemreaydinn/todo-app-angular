@@ -6,11 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent {
+  
   input = '';
-  list: {task:string, editMode: boolean}[] = [];
-  editMode:boolean = false;
-  newTask:string = "";
-  index:number = 0;
+  list: { task: string; editMode: boolean }[] = [];
+  newTask: string = '';
+  index: number = 0;
 
   addItem() {
     this.list.push({ task: this.input, editMode: false });
@@ -21,15 +21,14 @@ export class FormComponent {
     this.list.splice(index, 1);
   }
 
-  changeMode(index:number){
+  changeMode(index: number) {
     this.list[index].editMode = !this.list[index].editMode;
     this.newTask = this.list[index].task;
     this.index = index;
   }
 
-  saveNewTask(){
+  saveNewTask() {
     this.list[this.index].task = this.newTask;
     this.list[this.index].editMode = !this.list[this.index].editMode;
   }
-
 }
